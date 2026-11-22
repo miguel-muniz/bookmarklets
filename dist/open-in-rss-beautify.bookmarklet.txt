@@ -1,0 +1,1 @@
+javascript:void%20function()%7Blocation.href%3D%22https%3A%2F%2Frss.beauty%2Frss%3Furl%3D%22%2BencodeURIComponent(location.href)%3B%7D()

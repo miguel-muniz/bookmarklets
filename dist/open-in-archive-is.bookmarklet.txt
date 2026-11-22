@@ -1,0 +1,1 @@
+javascript:void%20function()%7Bconst%20n%3Dwindow.location.href%2Co%3D%22https%3A%2F%2Farchive.is%2F%22%2BencodeURIComponent(n)%3Bwindow.open(o%2C%22_blank%22)%3B%7D()
