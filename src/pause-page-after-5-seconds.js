@@ -1,4 +1,4 @@
-// @bookmarklet Pause Page After 5 Seconds
+// @bookmarklet Pause Page in 5 Seconds
 console.log(
   [
     "JavaScript will pause in 5 seconds.",

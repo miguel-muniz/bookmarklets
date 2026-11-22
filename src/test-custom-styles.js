@@ -1,4 +1,4 @@
-// @bookmarklet Test Custom Styles
+// @bookmarklet Preview Custom CSS
 const page = window;
 const editor = window.open("", "_blank", "popup,width=500,height=300");
 if (!editor) {
@@ -8,7 +8,7 @@ if (!editor) {
 
 const origin = location.origin;
 const editorDocument = editor.document;
-editorDocument.title = "Test Custom Styles";
+editorDocument.title = "Preview Custom CSS";
 
 const status = editorDocument.createElement("div");
 status.setAttribute("role", "status");

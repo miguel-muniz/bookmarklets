@@ -1,4 +1,4 @@
-// @bookmarklet Remove All Parameters from URL
+// @bookmarklet Remove URL Parameters
 history.replaceState(
   null,
   "",

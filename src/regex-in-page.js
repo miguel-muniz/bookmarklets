@@ -1,4 +1,4 @@
-// @bookmarklet RegEx in Page
+// @bookmarklet Highlight Regex Matches
 const pattern = prompt("Search page with a regular expression:", "");
 if (!pattern || !document.body) return;
 

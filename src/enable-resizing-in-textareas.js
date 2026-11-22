@@ -1,4 +1,4 @@
-// @bookmarklet Enable Resizing in Textareas
+// @bookmarklet Enable Textarea Resizing
 document.querySelectorAll("textarea").forEach((textarea) => {
   textarea.style.setProperty("resize", "both", "important");
 

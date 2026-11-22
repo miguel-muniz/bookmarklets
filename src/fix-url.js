@@ -1,4 +1,4 @@
-// @bookmarklet Fix URL
+// @bookmarklet Copy Shareable Link
 (async () => {
   const toast = (message, ok = true) => {
     const element = document.createElement("div");

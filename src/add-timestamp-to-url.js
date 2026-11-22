@@ -1,4 +1,4 @@
-// @bookmarklet Add Timestamp to URL
+// @bookmarklet Add URL Timestamp
 const now = new Date();
 const pad = (number) => String(number).padStart(2, "0");
 const timestamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}_${pad(now.getHours())}:${pad(now.getMinutes())}`;

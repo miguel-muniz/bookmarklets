@@ -1,4 +1,4 @@
-// @bookmarklet Enable Pasting in Inputs
+// @bookmarklet Enable Input Paste
 document.querySelectorAll("input").forEach((input) => {
   input.removeAttribute("onpaste");
   input.onpaste = null;
