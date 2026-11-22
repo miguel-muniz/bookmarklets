@@ -28,12 +28,14 @@ Open the page you want to use the bookmarklet on, then click the saved bookmark.
 | [Add URL Timestamp](src/add-url-timestamp.js) | Adds or updates a `ts` query parameter with the current local date and time without reloading the page. |
 | [Copy Link to Selected Text](src/copy-link-to-selected-text.js) | Copies a link that points directly to the selected text on the page. |
 | [Copy Shareable Link](src/copy-shareable-link.js) | Rewrites a copied X, Twitter, Reddit, or TikTok link for easier sharing and copies the rewritten URL. |
+| [Download Page Media](src/download-page-media.js) | Opens a downloader in a new tab to download media from the current page, or shows a toast on unsupported sites. |
 | [Enable Input Paste](src/enable-input-paste.js) | Restores pasting in input fields on pages that block it. |
 | [Enable Textarea Resizing](src/enable-textarea-resizing.js) | Makes textareas on the current page resizable in both directions. |
 | [Highlight Regex Matches](src/highlight-regex-matches.js) | Prompts for a regular expression, highlights matching page text, and reports the match count. |
 | [Open in Archive.is](src/open-in-archive-is.js) | Opens the current page’s URL in Archive.is in a new tab. |
 | [Open in Hacker News](src/open-in-hacker-news.js) | Searches Hacker News for the current page’s URL. |
 | [Open in RSS.beautify](src/open-in-rss-beautify.js) | Opens the current URL in RSS.beautify for a readable view of an RSS feed. |
+| [Open in Wayback Machine](src/open-in-wayback-machine.js) | Opens the Wayback Machine capture calendar for the current page in a new tab. |
 | [Pause Page in 5 Seconds](src/pause-page-in-5-seconds.js) | Pauses the page’s JavaScript after five seconds when browser developer tools are open. |
 | [Preview Custom CSS](src/preview-custom-css.js) | Opens a pop-up CSS editor that applies styles to the original tab as you type. |
 | [Remove URL Parameters](src/remove-url-parameters.js) | Removes the query string from the current URL while keeping the fragment. |

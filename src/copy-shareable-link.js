@@ -1,7 +1,8 @@
 // @bookmarklet Copy Shareable Link
 (async () => {
   const toast = (message, ok = true) => {
-    const element = document.createElement("div");
+    const element = document.createElement("button");
+    element.type = "button";
     element.textContent = message;
     element.setAttribute("popover", "manual");
     element.style.cssText = `
@@ -17,7 +18,7 @@
       font: 14px system-ui, sans-serif;
       box-shadow: 0 4px 16px #0005;
       opacity: 0;
-      pointer-events: none;
+      cursor: pointer;
       transition: opacity .2s, transform .2s;
       white-space: nowrap;
     `;
@@ -25,18 +26,31 @@
     if (element.showPopover) element.showPopover();
     else element.style.zIndex = 2147483647;
 
-    requestAnimationFrame(() => {
+    const show = () => {
       element.style.opacity = 1;
       element.style.transform = "translate(-50%, 0)";
+    };
+    requestAnimationFrame(show);
+
+    let timeout;
+    const scheduleDismissal = () => {
+      timeout = setTimeout(() => {
+        element.style.opacity = 0;
+        element.style.transform = "translate(-50%, -16px)";
+        timeout = setTimeout(() => element.remove(), 200);
+      }, 2500);
+    };
+    element.addEventListener("pointerenter", () => {
+      clearTimeout(timeout);
+      show();
     });
-    setTimeout(() => {
-      element.style.opacity = 0;
-      element.style.transform = "translate(-50%, -16px)";
-      setTimeout(() => {
-        if (element.hidePopover) element.hidePopover();
-        element.remove();
-      }, 200);
-    }, 2500);
+    element.addEventListener("pointerleave", scheduleDismissal);
+    scheduleDismissal();
+    element.addEventListener("click", (event) => {
+      event.stopPropagation();
+      clearTimeout(timeout);
+      element.remove();
+    });
   };
 
   try {

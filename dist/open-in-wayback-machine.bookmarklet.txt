@@ -1,0 +1,1 @@
+javascript:void%20function()%7Bconst%20o%3Dwindow.location.href%2Cn%3D%22https%3A%2F%2Fweb.archive.org%2Fweb%2F*%2F%22%2Bo%3Bwindow.open(n%2C%22_blank%22%2C%22noopener%22)%3B%7D()
