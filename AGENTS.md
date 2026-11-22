@@ -3,7 +3,7 @@
 - From the repository root, use `npm ci` to install dependencies and `npm run build` to generate installable bookmarklets.
 - Keep one readable JavaScript file per bookmarklet in `src/`. Start the file with `// @bookmarklet Display Name`. The build uses that name in the HTML import. Derive the filename from the display name by lowercasing it and replacing spaces and punctuation with hyphens, as in `open-in-archive-is.js`. When the display name changes, rename the source file and update its README link and generated install files.
 - Match the formatting of nearby files. Use `npm run format` to format all source files or `npm exec -- prettier --write src/<filename>.js` to format a single file.
-- Edit the source files and regenerate the install files with `npm run build`. The build produces `dist/bookmarklets.html` and one `dist/<filename>.bookmarklet.txt` per source file. Include the regenerated install files in the same change as the source. When removing or renaming a source file, remove its obsolete `.bookmarklet.txt` file from `dist/`.
+- Edit the source files and regenerate the install files with `npm run build`. The build produces `dist/bookmarklets.html` and one `dist/<filename>.bookmarklet.txt` per source file. Include the regenerated install files in the same change as the source. The build removes obsolete `.bookmarklet.txt` files when source files are removed or renamed. Include those deletions in the same change.
 - After changing a bookmarklet, check that it builds and that the generated URL starts with `javascript:`. Exercise changed behavior from a saved browser bookmark on a representative page when possible.
 
 ## Name bookmarklets

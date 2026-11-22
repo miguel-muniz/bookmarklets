@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { minify } from 'terser';
 
 const src = new URL('../src/', import.meta.url);
@@ -35,8 +35,11 @@ for (const filename of files) {
 
 await mkdir(dist, { recursive: true });
 
+const outputNames = new Set();
 for (const { name, href } of bookmarklets) {
-  const output = new URL(encodeURIComponent(`${name}.bookmarklet.txt`), dist);
+  const filename = `${name}.bookmarklet.txt`;
+  outputNames.add(filename);
+  const output = new URL(encodeURIComponent(filename), dist);
   await writeFile(output, href + '\n');
 }
 
@@ -54,5 +57,11 @@ await writeFile(new URL('bookmarklets.html', dist), [
   '</DL><p>',
   '',
 ].join('\n'));
+
+for (const entry of await readdir(dist, { withFileTypes: true })) {
+  if (entry.isFile() && entry.name.endsWith('.bookmarklet.txt') && !outputNames.has(entry.name)) {
+    await rm(new URL(encodeURIComponent(entry.name), dist), { force: true });
+  }
+}
 
 console.log(`Built ${bookmarklets.length} bookmarklet(s) in dist/.`);
